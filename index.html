@@ -9,19 +9,21 @@
     </head>
     <body>
         <div class="main-container">
-            <header>
-                <div class="header__logo"><img src="assets/images/logo/ohmyfood.png" alt="logo ohmyfood"></div>
-                <div class="header__current-location"><span class="current-location__icon"><i class="fas fa-map-marker-alt"></i></span><p>Paris, Belleville</p></div>
+            <header class="header">
+                <div class="header__logo"><h1>Ohmyfood</h1></div>
+                <div class="header__current-location"><span class="header__current-location--icon"><i class="fas fa-map-marker-alt"></i></span><p class="header__current-location--text">Paris, Belleville</p></div>
                 <div class="header__intro">
-                    <h1>Réservez le menu qui vous convient</h1>
-                    <p>Découvrez des restaurants d'exception, sélécetionnés par nos soins.</p>
-                    <a href="#restaurants">
-                        <button type="button" class="intro__btn btn--blue">Explorer nos restaurants</button>
-                    </a>
+                    <div class="header__intro--text">                    
+                        <h2>Réservez le menu qui vous convient</h2>
+                        <p>Découvrez des restaurants d'exception, sélécetionnés par nos soins.</p>
+                    </div>
+                        <a href="#restaurants">
+                            <button type="button" class="btn btn--wide">Explorer nos restaurants</button>
+                        </a>
                 </div>
             </header>
 
-            <nav>
+            <nav class="nav">
                 <div class="nav__guide">
                     <h2>Fonctionnement</h2>
                         <ol>
@@ -32,7 +34,7 @@
                 </div>
             </nav>
 
-            <section>
+            <section class="section">
                 <div class="restaurants">
                     <h2 id="restaurants">Restaurants</h2>
                         
@@ -91,9 +93,9 @@
                 </div>
             </section>
 
-            <footer>
+            <footer class="footer">
                 <div class="footer__container">
-                    <div class="footer__logo"><img src="assets/images/logo/ohmyfood.png" alt="logo ohmyfood"></div>
+                    <div class="footer__logo"><h2>Ohmyfood</h2></div>
                     <ul>
                         <li class="footer__li--bold"><i class="fas fa-utensils"></i>Proposer un restaurant</li>
                         <li class="footer__li--bold"><i class="fas fa-hands-helping"></i>Devenir partenaire</li>

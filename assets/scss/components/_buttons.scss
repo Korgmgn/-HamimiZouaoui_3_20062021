@@ -1,0 +1,10 @@
+@import "./../utils/variables";
+@import "./../utils/mixins";
+
+button.btn.btn--wide {
+    @include btn(220px);
+}
+
+button.btn {
+    @include btn;
+}
