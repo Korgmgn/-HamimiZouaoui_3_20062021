@@ -1,50 +1,32 @@
 @import "./../utils/variables";
-body
-{
-    margin-left: auto;
-    margin-right: auto;
+
+* {
+    font-size: 1em;
+    font-weight: normal;
+    padding-inline-start: 0px;
+    margin: 0px;
 }
 
 .main-container{
     display: flex;
     flex-direction: column;
     align-items: center;
-    max-width: 1440px;
+    margin-left: auto;
+    margin-right: auto;
+
 }
 
 .header {
+    width: 100%;
     display:flex;
     flex-direction: column;
     text-align: center;
-    &__logo {
-        h1 {
+    &__logo h1 {
             display: inline-flex;
             align-items: center;
             height: 65px;
-        }
-    }
-    &__current-location {
-        background-color: grey;
-        &--text {
-            height: 50px;
-            display: inline-flex;
-            align-items: center;
-        }
-        &--icon {
-            position: relative;
-            right: 10px;
-        }
-    }
-    &__intro {
-        background-color: lightgrey;
-        padding: 20px 30px 30px 30px;
-        &--text {
-            margin-bottom: 15px;
-            h2 {
-                font-weight: bold;
-                margin-bottom: 10px;
-            }
-        }
+            font-size: 2.2em;
     }
 }
+
 

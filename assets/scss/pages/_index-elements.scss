@@ -1,0 +1,56 @@
+@import "./../utils/variables";
+@import "./../utils/mixins";
+.header {
+    &__current-location {
+        background-color: $drkbg-color;
+        &--text {
+            height: 50px;
+            display: inline-flex;
+            align-items: center;
+            font-weight: bold;
+        }
+        &--icon {
+            position: relative;
+            right: 15px;
+        }
+    }
+    &__intro {
+        background-color: $bg-color;
+        padding: 40px 30px 60px 30px;
+        &--text {
+            margin-bottom: 30px;
+            h2 {
+                font-size: 1.7em;
+                font-weight: bold;
+                margin-bottom: 10px;
+                padding: 0 30px 0 30px;
+            }
+            p {
+                font-size: 1.2em;
+            }
+        }
+    }
+}
+
+.nav {
+    height: 440px;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0 25px 0 25px;
+    h2 {
+        display: inline-flex;
+        font-size: 1.3em;
+        font-weight: bold;
+    }
+    &__guide {
+        @include nav-card;
+        &--lightblue {
+            @include nav-card(#f5edff);
+            i {
+                color: $color-primary;
+            }
+        }
+    }
+}
