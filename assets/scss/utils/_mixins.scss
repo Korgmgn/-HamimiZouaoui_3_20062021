@@ -35,3 +35,15 @@
     border-radius: $brd-radius-crd;
     margin: 10px 0 10px 0;
 }
+
+@mixin dish-card {
+    height: 70px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    background-color: white;
+    border-radius: $brd-radius-crd;
+    box-shadow: $box-shadow;
+    margin: 10px 0 10px 0;
+}
