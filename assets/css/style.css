@@ -91,23 +91,24 @@ button.btn {
   display: flex;
   flex-direction: column;
   background-color: #f6f6f6;
-  padding: 20px;
+  padding: 20px 20px 40px 20px;
   border-radius: 40px 40px 0 0;
 }
 .menu__restaurant-name {
   display: flex;
   justify-content: space-between;
-  font-size: 1.5em;
+  font-size: 1.7em;
   padding: 15px 10px 0 0;
 }
 .menu__restaurant-name i {
+  font-size: 0.9em;
   color: #FF79DA;
 }
 .menu__dish-type {
   color: grey;
   text-transform: uppercase;
-  font-size: 1.15em;
-  margin: 40px 0 20px 0;
+  font-size: 1.1em;
+  margin: 30px 0 20px 0;
 }
 .menu__dish-card {
   height: 70px;
@@ -118,15 +119,36 @@ button.btn {
   background-color: white;
   border-radius: 15px;
   box-shadow: 0px 3px 10px lightgrey;
-  margin: 10px 0 10px 0;
+  margin: 8px 0 8px 0;
 }
 .menu__dish-card--name {
+  font-size: 1.15em;
   font-weight: bold;
+  margin: 5px 10px 0 10px;
 }
 .menu__dish-card--details {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  margin: 0 15px 0 10px;
+}
+.menu__dish-card--details p:first-child {
+  width: 85%;
+  font-size: 0.95em;
+  color: grey;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.menu__dish-card--details p:last-child {
+  font-size: 0.95em;
+  font-weight: bold;
+}
+.menu__btn--position {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 35px 0 0 0;
 }
 
 .footer {
