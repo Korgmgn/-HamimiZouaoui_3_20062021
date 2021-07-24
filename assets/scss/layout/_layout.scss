@@ -22,11 +22,11 @@
     flex-direction: column;
     text-align: center;
     &__logo {
+        height: 60px;
         width: 100%;
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 60px;
         font-size: 2em;
         box-shadow: $box-shadow;
         i.fa-arrow-left{
@@ -42,6 +42,8 @@
 }
 
 .menu {
+    position: relative;
+    bottom: 40px;
     display: flex;
     flex-direction: column;
     background-color: $bg-color;
@@ -98,6 +100,8 @@
 }
 
 .footer {
+    position: relative;
+    bottom: 40px;
     display: flex;
     flex-direction: column;
     color: white;

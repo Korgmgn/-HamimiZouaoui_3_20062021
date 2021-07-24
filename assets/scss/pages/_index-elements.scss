@@ -51,6 +51,7 @@
         margin-bottom: 20px
     }
     &__menu {
+        /* media query here*/
         &--step {
         @include nav-card;
         i {
@@ -78,6 +79,7 @@ section {
         align-items: center;
         background-color: $bg-color;
         padding: 70px 20px 60px 20px;
+        /* media query here*/
         &__title {
             align-self: flex-start;
             font-size: 1.5em;
