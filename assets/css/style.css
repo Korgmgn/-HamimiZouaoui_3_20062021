@@ -106,13 +106,20 @@ button.btn {
   font-size: 0.9em;
   color: #FF79DA;
 }
-.menu__dish-type {
+.menu__btn--position {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 35px 0 0 0;
+}
+
+.dish-type {
   color: grey;
   text-transform: uppercase;
   font-size: 1.1em;
   margin: 30px 0 20px 0;
 }
-.menu__dish-card {
+.dish-type__dish-card {
   height: 70px;
   width: 100%;
   display: flex;
@@ -123,18 +130,18 @@ button.btn {
   box-shadow: 0px 3px 10px lightgrey;
   margin: 8px 0 8px 0;
 }
-.menu__dish-card--name {
+.dish-type__dish-card--name {
   font-size: 1.15em;
   font-weight: bold;
   margin: 5px 10px 0 10px;
 }
-.menu__dish-card--details {
+.dish-type__dish-card--details {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   margin: 0 15px 0 10px;
 }
-.menu__dish-card--details p:first-child {
+.dish-type__dish-card--details p:first-child {
   width: 85%;
   font-size: 0.95em;
   color: grey;
@@ -142,15 +149,9 @@ button.btn {
   white-space: nowrap;
   text-overflow: ellipsis;
 }
-.menu__dish-card--details p:last-child {
+.dish-type__dish-card--details p:last-child {
   font-size: 0.95em;
   font-weight: bold;
-}
-.menu__btn--position {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  margin: 35px 0 0 0;
 }
 
 .footer {
@@ -265,24 +266,24 @@ button.btn {
   margin: 0 25px 0 40px;
 }
 
-section {
+.section {
   width: 100%;
-}
-section .restaurants {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   background-color: #f6f6f6;
-  padding: 70px 20px 60px 20px;
-  /* media query here*/
 }
-section .restaurants__title {
+.section__title {
   align-self: flex-start;
   font-size: 1.5em;
   font-weight: bold;
-  margin-bottom: 10px;
+  margin: 50px auto 0 20px;
 }
-section .restaurants__card {
+.section__restaurants {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 20px 60px 20px;
+  /* media query here*/
+}
+.section__restaurants--card {
   height: 250px;
   width: 100%;
   display: flex;
@@ -293,29 +294,30 @@ section .restaurants__card {
   border-radius: 15px;
   margin: 10px 0 10px 0;
 }
-section .restaurants__card--img {
+
+.card-content__img {
   width: 100%;
   height: 175px;
   object-fit: cover;
   border-radius: 15px 15px 0 0;
 }
-section .restaurants__card__bottom {
+.card-content__bottom {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   padding: 8px 10px 5px 12px;
 }
-section .restaurants__card__bottom--text {
+.card-content__bottom--text {
   width: 60%;
   display: flex;
   flex-direction: column;
   font-size: 1.15em;
   line-height: 25px;
 }
-section .restaurants__card__bottom--text h3 {
+.card-content__bottom--text h3 {
   font-weight: bold;
 }
-section .restaurants__card__bottom--heart {
+.card-content__bottom--heart {
   color: #FF79DA;
   align-self: center;
   font-size: 1.5em;
