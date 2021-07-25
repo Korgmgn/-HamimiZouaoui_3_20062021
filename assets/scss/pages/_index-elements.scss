@@ -71,7 +71,7 @@
     }
 }
 
-.section {
+.section-index {
     width: 100%;
     background-color: $bg-color;
     &__title {
@@ -118,6 +118,29 @@
             color: $color-secondary;
             align-self: center;
             font-size: 1.5em;
+        }
+    }
+}
+
+.footer-index {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    background-color: #353535;
+    padding: 20px 0 25px 20px;
+    &__logo {
+        margin-bottom: 15px;
+    }
+    &__list {
+        font-size: 0.95em;
+        line-height: 25px;
+        &--icon-a i {
+            font-size: 0.7em;
+            margin-right: 11px;
+        }
+        &--icon-b i{
+            font-size: 0.60em;
+            margin-right: 9px;
         }
     }
 }

@@ -8,3 +8,10 @@ button.btn.btn--wide {
 button.btn {
     @include btn;
 }
+
+.btn--position {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 35px 0 90px 0;
+}
