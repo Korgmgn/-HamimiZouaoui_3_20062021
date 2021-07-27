@@ -52,17 +52,45 @@
         display: flex;
         justify-content: space-between;
         font-size: 1.7em;
-        padding: 25px 10px 0 10px;
+        padding: 25px 15px 0 15px;
         i {
             font-size: 0.9em;
-            color: $color-secondary;
+            color: grey;
         }
+        .far {
+            position: relative;
+            z-index: 2;
+            left: 24px;
+            &:hover + .fas {
+                transform: scale(1);
+                z-index: 2;
+            }
+        }
+        .fas {
+            position: relative;
+            z-index: 1;
+            color: $color-secondary;
+            transform: scale(0);
+            transition: transform 300ms;
+        }
+
     }
     &__menu {
         display: flex;
         flex-direction: column;
         padding: 25px 15px 25px 15px;
-        /*media querrie here*/
+        @include tablet-large {
+            &--category {
+                width: 32%;
+            }
+        }        
+    }
+    @include tablet-large {
+        &__menu {
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
     }
 }
 

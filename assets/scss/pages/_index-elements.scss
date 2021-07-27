@@ -40,8 +40,8 @@
 
 
 .nav {
-    width: 100%;
-    padding: 12px 25px 12px 25px;
+    width: 88%;
+    padding: 50px 0 40px 0;
     &__title {
         display: inline-flex;
         font-size: 1.5em;
@@ -86,9 +86,25 @@
         flex-direction: column;
         align-items: center;
         padding: 10px 20px 60px 20px;
-        /* media query here*/        
         &--card {
             @include restaurant-card;
+        }
+        @include tablet {
+            &--card {
+                width: 49%;
+            }
+        }
+        @include monitor {
+            &--card {
+                height: 400px;
+            }
+        }
+    }
+    @include tablet {
+        &__restaurants {
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-between;
         }
     }
 }
@@ -99,6 +115,11 @@
         height: 175px;
         object-fit: cover;
         border-radius: 15px 15px 0 0;
+    }
+    @include monitor {
+        &__img {
+            height: 325px;
+        }
     }
     &__bottom {
         display: flex;
@@ -115,11 +136,24 @@
             }
         }
         &--heart {
-            color: $color-secondary;
+            color: grey;
             align-self: center;
             font-size: 1.5em;
+            .far {
+                position: relative;
+                z-index: 2;
+                left: 24px;
+                &:hover + .fas {
+                    transform: scale(1);
+                    z-index: 2;
+                }
+            }
             .fas {
-                display: none;
+                position: relative;
+                z-index: 1;
+                color: $color-secondary;
+                transform: scale(0);
+                transition: transform 300ms;
             }
         }
     }

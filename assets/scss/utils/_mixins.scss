@@ -6,7 +6,13 @@
     }
 }
 
-@mixin monitors {
+@mixin tablet-large {
+    @media all and (min-width: 870px) {
+        @content;
+    }
+}
+
+@mixin monitor {
     @media all and (min-width: 1200px) {
         @content;
     }
@@ -17,7 +23,8 @@
     height: 50px;
     width: $width;
     color: white;
-    background-color: $color-primary;
+    background: rgb(171,94,219);
+    background: linear-gradient(337deg, rgba(171,94,219,1) 40%, rgba(232,114,218,1) 80%);
     border-radius: 25px;
     border: none;
     box-shadow: $box-shadow;
@@ -58,3 +65,4 @@
     box-shadow: $box-shadow;
     margin: 8px 0 8px 0;
 }
+

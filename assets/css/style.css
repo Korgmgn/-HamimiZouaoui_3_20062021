@@ -31,7 +31,8 @@ button.btn.btn--wide {
   height: 50px;
   width: 220px;
   color: white;
-  background-color: #9356DC;
+  background: #ab5edb;
+  background: linear-gradient(337deg, #ab5edb 40%, #e872da 80%);
   border-radius: 25px;
   border: none;
   box-shadow: 0px 3px 10px lightgrey;
@@ -41,7 +42,8 @@ button.btn {
   height: 50px;
   width: 190px;
   color: white;
-  background-color: #9356DC;
+  background: #ab5edb;
+  background: linear-gradient(337deg, #ab5edb 40%, #e872da 80%);
   border-radius: 25px;
   border: none;
   box-shadow: 0px 3px 10px lightgrey;
@@ -105,17 +107,44 @@ button.btn {
   display: flex;
   justify-content: space-between;
   font-size: 1.7em;
-  padding: 25px 10px 0 10px;
+  padding: 25px 15px 0 15px;
 }
 .section__restaurant-name i {
   font-size: 0.9em;
+  color: grey;
+}
+.section__restaurant-name .far {
+  position: relative;
+  z-index: 2;
+  left: 24px;
+}
+.section__restaurant-name .far:hover + .fas {
+  transform: scale(1);
+  z-index: 2;
+}
+.section__restaurant-name .fas {
+  position: relative;
+  z-index: 1;
   color: #FF79DA;
+  transform: scale(0);
+  transition: transform 300ms;
 }
 .section__menu {
   display: flex;
   flex-direction: column;
   padding: 25px 15px 25px 15px;
-  /*media querrie here*/
+}
+@media all and (min-width: 870px) {
+  .section__menu--category {
+    width: 32%;
+  }
+}
+@media all and (min-width: 870px) {
+  .section__menu {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
 }
 
 .dish-type {
@@ -220,8 +249,8 @@ button.btn {
 }
 
 .nav {
-  width: 100%;
-  padding: 12px 25px 12px 25px;
+  width: 88%;
+  padding: 50px 0 40px 0;
 }
 .nav__title {
   display: inline-flex;
@@ -285,7 +314,6 @@ button.btn {
   flex-direction: column;
   align-items: center;
   padding: 10px 20px 60px 20px;
-  /* media query here*/
 }
 .section-index__restaurants--card {
   height: 250px;
@@ -297,12 +325,34 @@ button.btn {
   border-radius: 15px;
   margin: 10px 0 10px 0;
 }
+@media all and (min-width: 576px) {
+  .section-index__restaurants--card {
+    width: 49%;
+  }
+}
+@media all and (min-width: 1200px) {
+  .section-index__restaurants--card {
+    height: 400px;
+  }
+}
+@media all and (min-width: 576px) {
+  .section-index__restaurants {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+}
 
 .card-content__img {
   width: 100%;
   height: 175px;
   object-fit: cover;
   border-radius: 15px 15px 0 0;
+}
+@media all and (min-width: 1200px) {
+  .card-content__img {
+    height: 325px;
+  }
 }
 .card-content__bottom {
   display: flex;
@@ -320,12 +370,25 @@ button.btn {
   font-weight: bold;
 }
 .card-content__bottom--heart {
-  color: #FF79DA;
+  color: grey;
   align-self: center;
   font-size: 1.5em;
 }
+.card-content__bottom--heart .far {
+  position: relative;
+  z-index: 2;
+  left: 24px;
+}
+.card-content__bottom--heart .far:hover + .fas {
+  transform: scale(1);
+  z-index: 2;
+}
 .card-content__bottom--heart .fas {
-  display: none;
+  position: relative;
+  z-index: 1;
+  color: #FF79DA;
+  transform: scale(0);
+  transition: transform 300ms;
 }
 
 .footer-index {
