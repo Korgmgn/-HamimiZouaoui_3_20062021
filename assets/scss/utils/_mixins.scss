@@ -46,6 +46,7 @@
 
 @mixin restaurant-card {
     height: 250px;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -58,8 +59,8 @@
 @mixin dish-card {
     height: 70px;
     display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
+    flex-direction: row;
+    justify-content: space-between;
     background-color: white;
     border-radius: $brd-radius-crd;
     box-shadow: $box-shadow;
