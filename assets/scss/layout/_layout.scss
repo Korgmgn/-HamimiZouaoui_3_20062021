@@ -116,6 +116,13 @@
                 transform: rotate(1turn);
             }
         }
+        animation: menu-rollup 1500ms 500ms both;
+        @for $i from 1 through 4 {
+            &--#{$i} {
+                animation-delay: 250ms * $i;
+            }
+        }
+
         &:hover > .dish-type__dish-card--price {
             transform: translateX(-70px);
         }

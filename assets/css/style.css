@@ -1,3 +1,12 @@
+@keyframes menu-rollup {
+  0% {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
 @font-face {
   font-family: "Shrikhand";
   src: url(../fonts/Shrikhand-Regular.ttf);
@@ -27,6 +36,15 @@ footer a {
   color: white;
 }
 
+@keyframes menu-rollup {
+  0% {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
 button.btn.btn--wide {
   height: 50px;
   width: 220px;
@@ -170,12 +188,25 @@ button.btn {
   border-radius: 15px;
   box-shadow: 0px 3px 10px lightgrey;
   margin: 8px 0 8px 0;
+  animation: menu-rollup 1500ms 500ms both;
 }
 .dish-type__dish-card:hover > .dish-type__dish-card--animation {
   transform: scaleX(1);
 }
 .dish-type__dish-card:hover > .dish-type__dish-card--animation i {
   transform: rotate(1turn);
+}
+.dish-type__dish-card--1 {
+  animation-delay: 250ms;
+}
+.dish-type__dish-card--2 {
+  animation-delay: 500ms;
+}
+.dish-type__dish-card--3 {
+  animation-delay: 750ms;
+}
+.dish-type__dish-card--4 {
+  animation-delay: 1000ms;
 }
 .dish-type__dish-card:hover > .dish-type__dish-card--price {
   transform: translateX(-70px);
@@ -252,6 +283,15 @@ button.btn {
   margin-right: 9px;
 }
 
+@keyframes menu-rollup {
+  0% {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
 .header__current-location {
   background-color: #eaeaea;
 }

@@ -87,10 +87,10 @@
         } 
     }
     @include tablet-large {
-            &__guide {
-                flex-direction: row;
-                justify-content: space-between;
-            }
+        &__guide {
+            flex-direction: row;
+            justify-content: space-between;
+        }
     }
 }
 
