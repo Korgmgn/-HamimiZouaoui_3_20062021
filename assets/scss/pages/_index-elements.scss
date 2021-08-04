@@ -21,9 +21,7 @@
             width: 90%;
             display: flex;
             flex-direction: column;
-            margin-left: auto;
-            margin-right: auto;
-            margin-bottom: 30px;
+            margin: 0 auto 30px auto;
             h2 {
                 font-size: 1.65em;
                 font-weight: bold;
@@ -132,6 +130,7 @@
 }
 
 .card-content {
+    position: relative;
     &__img {
         width: 100%;
         height: 175px;
@@ -143,40 +142,54 @@
             height: 325px;
         }
     }
+    &__new {
+        position: absolute;
+        right: 12px;
+        top: 12px;
+        width: max-content;
+        font-size: 0.8em;
+        color: green;
+        background-color: $color-tertiary;
+        padding: 5px 10px;
+        border-radius: 3px;
+    }
     &__bottom {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        padding: 8px 10px 5px 12px;
+        padding: 8px 12px 5px 12px;
         &--text {
             display: flex;
             flex-direction: column;
             font-size: 1.15em;
             line-height: 25px;
+            margin-right: auto;
             h3 {
                 font-weight: bold;
             }
         }
-        &--heart {
+        &--heart-empty {
+            position: relative;
+            left: 24px;
+            z-index: 2;
             color: grey;
             align-self: center;
             font-size: 1.5em;
-            .far {
-                position: relative;
-                z-index: 2;
-                left: 24px;
-                &:hover + .fas {
-                    transform: scale(1);
-                    z-index: 2;
-                }
+            opacity: 1;
+            transition: opacity 150ms;
+            &:hover {
+                opacity: 0;
             }
-            .fas {
-                position: relative;
-                z-index: 1;
-                color: $color-secondary;
-                transform: scale(0);
-                transition: transform 300ms;
-            }
+            &:hover + .card-content__bottom--heart-filled {
+                transform: scale(1);
+            }           
+        }        
+        &--heart-filled {
+            color: $color-secondary;
+            align-self: center;
+            font-size: 1.5em;
+            transform: scale(0);
+            transition: transform 250ms;
         }
     }
 }

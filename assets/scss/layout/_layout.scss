@@ -26,20 +26,15 @@
         width: 100%;
         display: flex;
         flex-direction: row;
-        justify-content: space-between;
+        justify-content: center;
         align-items: center;
         font-size: 2em;
-        padding: 0 5px 0 5px;
         box-shadow: $box-shadow;
-        h1 {
-            margin: 0 auto 0 auto;
-        }
-        i.fa-arrow-left{
+        &--arrow {
+            position: absolute;
+            left: 15px;
             font-size: 0.6em;
-        }
-        span {
-            width: 16px;
-        }
+        }        
     }
     &__img {
         width: 100%;
@@ -51,42 +46,47 @@
 
 
 .section {
-    position: relative;
-    bottom: 40px;
     width: 100%;
     background-color: $bg-color;
     border-radius: 30px 30px 0 0;
     &__restaurant-name {
+        position: relative;
+        bottom: 40px;
         display: flex;
-        justify-content: space-between;
         font-size: 1.7em;
-        padding: 25px 15px 0 15px;
-        i {
-            font-size: 0.9em;
-            color: grey;
+        padding: 35px 25px 0 15px;
+        background-color: $bg-color;
+        border-radius: 35px 35px 0 0;
+        h2 {
+            margin-right: auto;
         }
-        .far {
+        &--heart-empty {
             position: relative;
+            left: 27px;
             z-index: 2;
-            left: 25px;
-            &:hover + .fas {
-                transform: scale(1);
-                z-index: 2;
+            color: grey;
+            opacity: 1;
+            transition: opacity 150ms;
+            &:hover {
+                opacity: 0;
             }
-        }
-        .fas {
-            position: relative;
-            z-index: 1;
+            &:hover + .section__restaurant-name--heart-filled {
+                transform: scale(1);
+            }           
+        }        
+        &--heart-filled {
             color: $color-secondary;
             transform: scale(0);
-            transition: transform 200ms;
+            transition: transform 250ms;
         }
-
     }
     &__menu {
         display: flex;
         flex-direction: column;
-        padding: 25px 15px 25px 15px;
+        padding: 0 15px 0 15px;
+        &--category {
+            margin-bottom: 30px;
+        }
         @include tablet-large {
             &--category {
                 width: 32%;
@@ -104,19 +104,32 @@
 
 
 .dish-type {
+    display: inline-block;
+    position: relative;
     color: grey;
     text-transform: uppercase;
     font-size: 1.1em;
-    margin: 30px 0 20px 0;
+    margin: 0px 0 20px 0;
+    &::before {
+        content:"";
+        position: absolute;
+        width: 45px;
+        bottom: -8px;
+        left: 0;
+        border-bottom: 3px solid lightgrey;
+    }
     &__dish-card {
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
         @include dish-card;
         &:hover > .dish-type__dish-card--animation {
-            transform: scaleX(1);
+            transform: translateX(0px);
             & i {
                 transform: rotate(1turn);
             }
         }
-        animation: menu-rollup 1500ms 500ms both;
+        animation: menu-rollup 1000ms 500ms both;
         @for $i from 1 through 4 {
             &--#{$i} {
                 animation-delay: 250ms * $i;
@@ -124,40 +137,43 @@
         }
 
         &:hover > .dish-type__dish-card--price {
-            transform: translateX(-70px);
+            transform: translateX(0);
         }
         &--details {
+            width: max-content;
+            min-width: 0;
             font-size: 1.15em;
             font-weight: bold;
             margin: auto 10px auto 10px;
-            overflow: hidden;
-            white-space: nowrap;
-            text-overflow: ellipsis;
+            h3 {
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
             p {
                 font-size: 0.95em;
                 color: grey;
                 font-weight: normal;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
             }
         }
         &--price {
-            position: relative;
-            left: 70px;
+            width: max-content;
             margin: auto 15px 12px auto;            
             font-size: 0.95em;
-            font-weight: bold;
-            transform: translateY(0px);     
-            transition: transform 400ms;           
+            font-weight: bold;         
         }
         &--animation {
             height: 70px;
-            min-width: 70px;
+            min-height: 70px;
             display: flex;
             justify-content: center;
             align-items: center;
             background-color: $color-tertiary;
             border-radius: 0 15px 15px 0;
-            transform-origin: right 50%;
-            transform: scaleX(0);
+            transform: translateX(70px);
             transition: transform 400ms;    
             i {
                 height: 25px;
@@ -176,8 +192,6 @@
 }
 
 .footer {
-    position: relative;
-    bottom: 40px;
     display: flex;
     flex-direction: column;
     color: white;

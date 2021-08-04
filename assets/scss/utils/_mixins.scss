@@ -23,11 +23,17 @@
     height: 50px;
     width: $width;
     color: white;
-    background: rgb(171,94,219);
-    background: linear-gradient(337deg, rgba(171,94,219,1) 40%, rgba(232,114,218,1) 80%);
+    background: $btn-color;
+    background: $btn-gradient;
     border-radius: 25px;
     border: none;
     box-shadow: $box-shadow;
+}
+
+@mixin btn-hover {
+    box-shadow: $box-shadow-hover;
+    background: $btn-gradient-lighter-a;
+    background: $btn-color-hover;
 }
 
 @mixin nav-card($color: $bg-color){
@@ -61,6 +67,8 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    overflow: hidden;
+    white-space: nowrap;
     background-color: white;
     border-radius: $brd-radius-crd;
     box-shadow: $box-shadow;
@@ -69,7 +77,7 @@
 
 @keyframes menu-rollup {
     0% {
-        transform: translateY(100px);
+        transform: translateY(15px);
         opacity: 0;
     }
 

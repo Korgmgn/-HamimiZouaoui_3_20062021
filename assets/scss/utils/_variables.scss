@@ -5,5 +5,15 @@ $misc-color: #f5edff;
 $bg-color: #f6f6f6;
 $drkbg-color: #eaeaea;
 
+$btn-color: rgb(171,94,219);
+$btn-color-lighter: rgba(232,114,218,1);
+$btn-gradient: linear-gradient(350deg, rgba(171,94,219,1) 50%, rgba(232,114,218,1) 80%);
+
+$btn-gradient-lighter-a: lighten($btn-color, 3%);
+$btn-gradient-lighter-b: lighten($btn-color-lighter, 3%);
+$btn-color-hover: linear-gradient(350deg, $btn-gradient-lighter-a 50%, $btn-gradient-lighter-b 80%);
+
+
 $box-shadow: 0px 3px 10px lightgrey;
+$box-shadow-hover: 0px 10px 15px lightgrey;
 $brd-radius-crd: 15px;
