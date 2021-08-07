@@ -15,7 +15,7 @@
   font-family: "Roboto";
   src: url(../fonts/Roboto-Medium.ttf);
 }
-.header__logo, .section__restaurant-name, .footer__logo, .footer-index__logo {
+.header__logo, .section__restaurant-name, .footer__logo, .footer-index__logo, .animation__logo {
   font-family: "Shrikhand";
 }
 
@@ -410,6 +410,7 @@ button.btn:hover {
   align-items: center;
   position: relative;
   right: 15px;
+  z-index: 1;
   color: white;
   background-color: #9356DC;
   border-radius: 50%;
@@ -557,6 +558,153 @@ button.btn:hover {
 .footer-index__list--icon-b i {
   font-size: 0.6em;
   margin-right: 9px;
+}
+
+.main-loader {
+  height: 70%;
+  width: 100%;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: white;
+  background: linear-gradient(180deg, white 0%, #99e2d0 100%);
+  z-index: 2;
+  opacity: 1;
+  transition: opacity 500ms 2000ms both;
+}
+.main-loader:hover {
+  opacity: 0;
+}
+.main-loader:hover > .animation {
+  transform: translateX(0px);
+}
+
+.animation {
+  height: 400px;
+  width: 310px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+  transform: translateX(-800px) scaleY(0.9) scaleX(1.1);
+  transition: transform 1200ms ease;
+}
+.animation__bell {
+  width: 200px;
+  height: 100px;
+  position: absolute;
+  z-index: 2;
+  background: #e5e7e7;
+  background: radial-gradient(circle, #e5e7e7 0%, #d7d9d9 45%, #c1c3c4 90%);
+  border: solid 1px black;
+  border-radius: 90px 90px 5px 5px;
+  transform-origin: 0% 100%;
+  transform: translateY(20px) rotate(0deg);
+  transition: transform 500ms ease;
+}
+.animation__bell:hover {
+  transform: translateY(-20px) rotate(-15deg);
+}
+.animation__logo {
+  font-size: 2em;
+  position: absolute;
+  top: 80px;
+  z-index: 1;
+}
+.animation__chariot--handle {
+  width: 60px;
+  height: 10px;
+  position: absolute;
+  top: 105px;
+  left: -10px;
+  z-index: 3;
+  background: #e5e7e7;
+  background: linear-gradient(90deg, #e5e7e7 0%, #d7d9d9 45%, #c1c3c4 90%);
+  border: solid 1px black;
+  border-radius: 5px;
+  transform: rotate(30deg);
+}
+.animation__chariot--table {
+  width: 250px;
+  height: 25px;
+  position: absolute;
+  top: 120px;
+  left: 30px;
+  z-index: 2;
+  background: #e5e7e7;
+  background: radial-gradient(circle, #e5e7e7 0%, #d7d9d9 45%, #c1c3c4 90%);
+  border: solid 1px black;
+  border-radius: 5px 5px 25% 25%;
+}
+.animation__chariot--leg-1 {
+  height: 150px;
+  width: 15px;
+  position: absolute;
+  left: 60px;
+  bottom: 105px;
+  z-index: 1;
+  background: #e5e7e7;
+  background: linear-gradient(90deg, #e5e7e7 0%, #d7d9d9 45%, #c1c3c4 90%);
+  border: solid 1px black;
+  border-radius: 3px;
+}
+.animation__chariot--leg-2 {
+  height: 150px;
+  width: 15px;
+  position: absolute;
+  right: 60px;
+  bottom: 105px;
+  z-index: 1;
+  background: #e5e7e7;
+  background: linear-gradient(90deg, #e5e7e7 0%, #d7d9d9 45%, #c1c3c4 90%);
+  border: solid 1px black;
+  border-radius: 3px;
+}
+.animation__chariot--stand {
+  width: 230px;
+  height: 20px;
+  position: absolute;
+  left: 40px;
+  bottom: 90px;
+  z-index: 2;
+  background: #e5e7e7;
+  background: radial-gradient(circle, #e5e7e7 0%, #d7d9d9 45%, #c1c3c4 90%);
+  border: solid 1px black;
+  border-radius: 5px;
+}
+.animation__chariot--wheel-1 {
+  height: 40px;
+  width: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: 50px;
+  bottom: 50px;
+  z-index: 1;
+  background-color: black;
+  border-radius: 50%;
+}
+.animation__chariot--wheel-1--inside {
+  height: 25px;
+  width: 25px;
+  background: #e5e7e7;
+  background: radial-gradient(circle, #e5e7e7 0%, #d7d9d9 45%, #c1c3c4 90%);
+  border-radius: 50%;
+}
+.animation__chariot--wheel-2 {
+  height: 40px;
+  width: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  right: 50px;
+  bottom: 50px;
+  background-color: black;
+  border-radius: 50%;
 }
 
 /*# sourceMappingURL=style.css.map */
