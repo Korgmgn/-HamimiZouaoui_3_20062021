@@ -571,7 +571,7 @@ button.btn:hover {
   background: linear-gradient(180deg, white 0%, #99e2d0 100%);
   z-index: 2;
   opacity: 1;
-  transition: opacity 500ms 2000ms both;
+  transition: opacity 500ms 2000ms;
 }
 .main-loader:hover {
   opacity: 0;
