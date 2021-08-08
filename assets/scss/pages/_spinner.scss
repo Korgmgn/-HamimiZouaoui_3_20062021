@@ -1,21 +1,14 @@
 .main-loader { 
-    height: 70%;
+    height: 100%;
     width: 100%;
-    position: absolute;
+    position: fixed;
     display: flex;
     justify-content: center;
     align-items: center;
     background: rgb(255,255,255);
     background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(153,226,208,1) 100%);
-    z-index: 2;
-    opacity: 1;
-    transition: opacity 500ms 2000ms;
-    &:hover {
-        opacity: 0;
-    }
-    &:hover > .animation {
-        transform: translateX(0px);
-    }
+    z-index: 3;
+    animation: spinner-bg 500ms 3400ms both
   }
   
     .animation {
@@ -26,8 +19,7 @@
         justify-content: flex-start;
         align-items: center;
         position: relative;
-        transform: translateX(-800px) scaleY(0.9) scaleX(1.1);
-        transition: transform 1200ms ease;
+        animation: spinner-roll 1500ms 500ms ease both;
         &__bell {
             width: 200px;
             height: 100px;
@@ -37,12 +29,9 @@
             background: radial-gradient(circle, rgba(229,231,231,1) 0%, rgba(215,217,217,1) 45%, rgba(193,195,196,1) 90%);
             border: solid 1px black;
             border-radius: 90px 90px 5px 5px;
-            transform-origin: 0% 100%;
-            transform: translateY(20px) rotate(0deg);
-            transition: transform 500ms ease;
-            &:hover {
-                transform: translateY(-20px) rotate(-15deg);
-            }
+            box-shadow: $spinner-shadow;
+            transform-origin: 0% 100%;        
+            animation: bell-reveal 700ms 2200ms ease both;
         }
     &__logo {
       font-size: 2em;
@@ -59,9 +48,10 @@
         left: -10px;
         z-index: 3;
         background: rgb(229,231,231);
-  background: linear-gradient(90deg, rgba(229,231,231,1) 0%, rgba(215,217,217,1) 45%, rgba(193,195,196,1) 90%);
+        background: linear-gradient(90deg, rgba(229,231,231,1) 0%, rgba(215,217,217,1) 45%, rgba(193,195,196,1) 90%);
         border: solid 1px black;
         border-radius: 5px;
+        box-shadow: $spinner-shadow;
         transform: rotate(30deg);
       }
       &--table {
@@ -72,9 +62,10 @@
         left: 30px;
         z-index: 2;
         background: rgb(229,231,231);
-  background: radial-gradient(circle, rgba(229,231,231,1) 0%, rgba(215,217,217,1) 45%, rgba(193,195,196,1) 90%);
+        background: radial-gradient(circle, rgba(229,231,231,1) 0%, rgba(215,217,217,1) 45%, rgba(193,195,196,1) 90%);
         border: solid 1px black;
         border-radius: 5px 5px 25% 25%;
+        box-shadow: $spinner-shadow;
       }
       &--leg-1 {
         height: 150px;
@@ -84,9 +75,10 @@
         bottom: 105px;
         z-index: 1;
         background: rgb(229,231,231);
-  background: linear-gradient(90deg, rgba(229,231,231,1) 0%, rgba(215,217,217,1) 45%, rgba(193,195,196,1) 90%);
+        background: linear-gradient(90deg, rgba(229,231,231,1) 0%, rgba(215,217,217,1) 45%, rgba(193,195,196,1) 90%);
         border: solid 1px black;
         border-radius: 3px;
+        box-shadow: $spinner-shadow;
       }
       &--leg-2 {
         height: 150px;
@@ -96,9 +88,10 @@
         bottom: 105px;
         z-index: 1;
         background: rgb(229,231,231);
-  background: linear-gradient(90deg, rgba(229,231,231,1) 0%, rgba(215,217,217,1) 45%, rgba(193,195,196,1) 90%);
+        background: linear-gradient(90deg, rgba(229,231,231,1) 0%, rgba(215,217,217,1) 45%, rgba(193,195,196,1) 90%);
         border: solid 1px black;
         border-radius: 3px;
+        box-shadow: $spinner-shadow;
       }
       &--stand {
         width: 230px;
@@ -108,9 +101,10 @@
         bottom: 90px;
         z-index: 2;
         background: rgb(229,231,231);
-  background: radial-gradient(circle, rgba(229,231,231,1) 0%, rgba(215,217,217,1) 45%, rgba(193,195,196,1) 90%);
+        background: radial-gradient(circle, rgba(229,231,231,1) 0%, rgba(215,217,217,1) 45%, rgba(193,195,196,1) 90%);
         border: solid 1px black;
         border-radius: 5px;
+        box-shadow: $spinner-shadow;
       }
       &--wheel-1 {
         height: 40px;
@@ -119,17 +113,39 @@
         justify-content: center;
         align-items: center;
         position: absolute;
-        left: 50px;
+        left: 45px;
         bottom: 50px;
         z-index: 1;
         background-color: black;
         border-radius: 50%;
+        box-shadow: $spinner-shadow;
+        animation: wheels 1900ms ease-out both;
         &--inside {
-          height: 25px;
-          width: 25px;
+          height: 24px;
+          width: 24px;
           background: rgb(229,231,231);
-  background: radial-gradient(circle, rgba(229,231,231,1) 0%, rgba(215,217,217,1) 45%, rgba(193,195,196,1) 90%);
+          background: radial-gradient(circle, rgba(229,231,231,1) 0%, rgba(215,217,217,1) 45%, rgba(193,195,196,1) 90%);
           border-radius: 50%;
+        }
+        &--inside::before {
+          content: '';
+          height: 3px;
+          width: 28px;
+          background-color: black;
+          position: absolute;
+          left: 9px;
+          transform-origin: left;
+          transform: rotate(45deg);
+        }
+        &--inside::after {
+          content: '';
+          height: 28px;
+          width: 3px;
+          background-color: black;
+          position: absolute;
+          bottom: 9px;
+          transform-origin: bottom;
+          transform: rotate(45deg);
         }
       }
       &--wheel-2 {
@@ -139,10 +155,12 @@
         justify-content: center;
         align-items: center;
         position: absolute;
-        right: 50px;
+        right: 45px;
         bottom: 50px;
         background-color: black;
-        border-radius: 50%;  
+        border-radius: 50%;
+        box-shadow: $spinner-shadow;
+        animation: wheels 1900ms ease-out both;
       }
     }  
   }

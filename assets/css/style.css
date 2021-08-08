@@ -7,6 +7,54 @@
     transform: translateY(0px);
   }
 }
+@keyframes spinner-bg {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+@keyframes spinner-roll {
+  0% {
+    transform: translateX(-1450px) scaleX(1.2) scaleY(0.8);
+  }
+  79% {
+    transform-origin: 100% 100%;
+    transform: rotate(8deg);
+  }
+  80% {
+    transform: translateX(0px) scaleX(0.95) scaleY(1.1);
+  }
+  85% {
+    transform-origin: 0% 100%;
+    transform: rotate(-4deg);
+  }
+  90% {
+    transform-origin: 100% 100%;
+    transform: rotate(2deg);
+  }
+  100% {
+    transform: scaleX(1) scaleY(1);
+  }
+}
+@keyframes bell-reveal {
+  from {
+    transform: translateY(20px) rotate(0deg);
+  }
+  to {
+    transform: translateY(-20px) rotate(-15deg);
+  }
+}
+@keyframes wheels {
+  0% {
+    transform: rotate(0turn);
+  }
+  100% {
+    transform: rotate(6turn);
+  }
+}
 @font-face {
   font-family: "Shrikhand";
   src: url(../fonts/Shrikhand-Regular.ttf);
@@ -45,6 +93,54 @@ footer a {
     transform: translateY(0px);
   }
 }
+@keyframes spinner-bg {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+@keyframes spinner-roll {
+  0% {
+    transform: translateX(-1450px) scaleX(1.2) scaleY(0.8);
+  }
+  79% {
+    transform-origin: 100% 100%;
+    transform: rotate(8deg);
+  }
+  80% {
+    transform: translateX(0px) scaleX(0.95) scaleY(1.1);
+  }
+  85% {
+    transform-origin: 0% 100%;
+    transform: rotate(-4deg);
+  }
+  90% {
+    transform-origin: 100% 100%;
+    transform: rotate(2deg);
+  }
+  100% {
+    transform: scaleX(1) scaleY(1);
+  }
+}
+@keyframes bell-reveal {
+  from {
+    transform: translateY(20px) rotate(0deg);
+  }
+  to {
+    transform: translateY(-20px) rotate(-15deg);
+  }
+}
+@keyframes wheels {
+  0% {
+    transform: rotate(0turn);
+  }
+  100% {
+    transform: rotate(6turn);
+  }
+}
 button.btn.btn--wide {
   height: 50px;
   width: 220px;
@@ -54,6 +150,7 @@ button.btn.btn--wide {
   border-radius: 25px;
   border: none;
   box-shadow: 0px 3px 10px lightgrey;
+  transition: all 300ms ease-in-out;
 }
 button.btn.btn--wide:hover {
   box-shadow: 0px 10px 15px lightgrey;
@@ -70,6 +167,7 @@ button.btn {
   border-radius: 25px;
   border: none;
   box-shadow: 0px 3px 10px lightgrey;
+  transition: all 300ms ease-in-out;
 }
 button.btn:hover {
   box-shadow: 0px 10px 15px lightgrey;
@@ -265,7 +363,7 @@ button.btn:hover {
 }
 .dish-type__dish-card--animation {
   height: 70px;
-  min-height: 70px;
+  min-width: 70px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -319,8 +417,57 @@ button.btn:hover {
     transform: translateY(0px);
   }
 }
+@keyframes spinner-bg {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+@keyframes spinner-roll {
+  0% {
+    transform: translateX(-1450px) scaleX(1.2) scaleY(0.8);
+  }
+  79% {
+    transform-origin: 100% 100%;
+    transform: rotate(8deg);
+  }
+  80% {
+    transform: translateX(0px) scaleX(0.95) scaleY(1.1);
+  }
+  85% {
+    transform-origin: 0% 100%;
+    transform: rotate(-4deg);
+  }
+  90% {
+    transform-origin: 100% 100%;
+    transform: rotate(2deg);
+  }
+  100% {
+    transform: scaleX(1) scaleY(1);
+  }
+}
+@keyframes bell-reveal {
+  from {
+    transform: translateY(20px) rotate(0deg);
+  }
+  to {
+    transform: translateY(-20px) rotate(-15deg);
+  }
+}
+@keyframes wheels {
+  0% {
+    transform: rotate(0turn);
+  }
+  100% {
+    transform: rotate(6turn);
+  }
+}
 .header__current-location {
   background-color: #eaeaea;
+  box-shadow: inset 0px 3px 10px lightgrey;
 }
 .header__current-location--text {
   height: 50px;
@@ -561,23 +708,16 @@ button.btn:hover {
 }
 
 .main-loader {
-  height: 70%;
+  height: 100%;
   width: 100%;
-  position: absolute;
+  position: fixed;
   display: flex;
   justify-content: center;
   align-items: center;
   background: white;
   background: linear-gradient(180deg, white 0%, #99e2d0 100%);
-  z-index: 2;
-  opacity: 1;
-  transition: opacity 500ms 2000ms;
-}
-.main-loader:hover {
-  opacity: 0;
-}
-.main-loader:hover > .animation {
-  transform: translateX(0px);
+  z-index: 3;
+  animation: spinner-bg 500ms 3400ms both;
 }
 
 .animation {
@@ -588,8 +728,7 @@ button.btn:hover {
   justify-content: flex-start;
   align-items: center;
   position: relative;
-  transform: translateX(-800px) scaleY(0.9) scaleX(1.1);
-  transition: transform 1200ms ease;
+  animation: spinner-roll 1500ms 500ms ease both;
 }
 .animation__bell {
   width: 200px;
@@ -600,12 +739,9 @@ button.btn:hover {
   background: radial-gradient(circle, #e5e7e7 0%, #d7d9d9 45%, #c1c3c4 90%);
   border: solid 1px black;
   border-radius: 90px 90px 5px 5px;
+  box-shadow: 5px 0px 5px lightgrey;
   transform-origin: 0% 100%;
-  transform: translateY(20px) rotate(0deg);
-  transition: transform 500ms ease;
-}
-.animation__bell:hover {
-  transform: translateY(-20px) rotate(-15deg);
+  animation: bell-reveal 700ms 2200ms ease both;
 }
 .animation__logo {
   font-size: 2em;
@@ -624,6 +760,7 @@ button.btn:hover {
   background: linear-gradient(90deg, #e5e7e7 0%, #d7d9d9 45%, #c1c3c4 90%);
   border: solid 1px black;
   border-radius: 5px;
+  box-shadow: 5px 0px 5px lightgrey;
   transform: rotate(30deg);
 }
 .animation__chariot--table {
@@ -637,6 +774,7 @@ button.btn:hover {
   background: radial-gradient(circle, #e5e7e7 0%, #d7d9d9 45%, #c1c3c4 90%);
   border: solid 1px black;
   border-radius: 5px 5px 25% 25%;
+  box-shadow: 5px 0px 5px lightgrey;
 }
 .animation__chariot--leg-1 {
   height: 150px;
@@ -649,6 +787,7 @@ button.btn:hover {
   background: linear-gradient(90deg, #e5e7e7 0%, #d7d9d9 45%, #c1c3c4 90%);
   border: solid 1px black;
   border-radius: 3px;
+  box-shadow: 5px 0px 5px lightgrey;
 }
 .animation__chariot--leg-2 {
   height: 150px;
@@ -661,6 +800,7 @@ button.btn:hover {
   background: linear-gradient(90deg, #e5e7e7 0%, #d7d9d9 45%, #c1c3c4 90%);
   border: solid 1px black;
   border-radius: 3px;
+  box-shadow: 5px 0px 5px lightgrey;
 }
 .animation__chariot--stand {
   width: 230px;
@@ -673,6 +813,7 @@ button.btn:hover {
   background: radial-gradient(circle, #e5e7e7 0%, #d7d9d9 45%, #c1c3c4 90%);
   border: solid 1px black;
   border-radius: 5px;
+  box-shadow: 5px 0px 5px lightgrey;
 }
 .animation__chariot--wheel-1 {
   height: 40px;
@@ -681,18 +822,40 @@ button.btn:hover {
   justify-content: center;
   align-items: center;
   position: absolute;
-  left: 50px;
+  left: 45px;
   bottom: 50px;
   z-index: 1;
   background-color: black;
   border-radius: 50%;
+  box-shadow: 5px 0px 5px lightgrey;
+  animation: wheels 1900ms ease-out both;
 }
 .animation__chariot--wheel-1--inside {
-  height: 25px;
-  width: 25px;
+  height: 24px;
+  width: 24px;
   background: #e5e7e7;
   background: radial-gradient(circle, #e5e7e7 0%, #d7d9d9 45%, #c1c3c4 90%);
   border-radius: 50%;
+}
+.animation__chariot--wheel-1--inside::before {
+  content: "";
+  height: 3px;
+  width: 28px;
+  background-color: black;
+  position: absolute;
+  left: 9px;
+  transform-origin: left;
+  transform: rotate(45deg);
+}
+.animation__chariot--wheel-1--inside::after {
+  content: "";
+  height: 28px;
+  width: 3px;
+  background-color: black;
+  position: absolute;
+  bottom: 9px;
+  transform-origin: bottom;
+  transform: rotate(45deg);
 }
 .animation__chariot--wheel-2 {
   height: 40px;
@@ -701,10 +864,12 @@ button.btn:hover {
   justify-content: center;
   align-items: center;
   position: absolute;
-  right: 50px;
+  right: 45px;
   bottom: 50px;
   background-color: black;
   border-radius: 50%;
+  box-shadow: 5px 0px 5px lightgrey;
+  animation: wheels 1900ms ease-out both;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -3,6 +3,7 @@
 .header {
     &__current-location {
         background-color: $drkbg-color;
+        box-shadow: inset 0px 3px 10px lightgrey;
         &--text {
             height: 50px;
             display: inline-flex;
