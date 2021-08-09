@@ -25,7 +25,7 @@
     transform: rotate(8deg);
   }
   80% {
-    transform: translateX(0px) scaleX(0.95) scaleY(1.1);
+    transform: translateX(0px);
   }
   85% {
     transform-origin: 0% 100%;
@@ -111,7 +111,7 @@ footer a {
     transform: rotate(8deg);
   }
   80% {
-    transform: translateX(0px) scaleX(0.95) scaleY(1.1);
+    transform: translateX(0px);
   }
   85% {
     transform-origin: 0% 100%;
@@ -150,6 +150,7 @@ button.btn.btn--wide {
   border-radius: 25px;
   border: none;
   box-shadow: 0px 3px 10px lightgrey;
+  cursor: pointer;
   transition: all 300ms ease-in-out;
 }
 button.btn.btn--wide:hover {
@@ -167,6 +168,7 @@ button.btn {
   border-radius: 25px;
   border: none;
   box-shadow: 0px 3px 10px lightgrey;
+  cursor: pointer;
   transition: all 300ms ease-in-out;
 }
 button.btn:hover {
@@ -299,22 +301,20 @@ button.btn:hover {
   border-bottom: 3px solid lightgrey;
 }
 .dish-type__dish-card {
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
   height: 70px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   overflow: hidden;
-  white-space: nowrap;
   background-color: white;
   border-radius: 15px;
   box-shadow: 0px 3px 10px lightgrey;
   margin: 8px 0 8px 0;
+  cursor: pointer;
   animation: menu-rollup 1000ms 500ms both;
 }
 .dish-type__dish-card:hover > .dish-type__dish-card--animation {
+  min-width: 70px;
   transform: translateX(0px);
 }
 .dish-type__dish-card:hover > .dish-type__dish-card--animation i {
@@ -363,14 +363,14 @@ button.btn:hover {
 }
 .dish-type__dish-card--animation {
   height: 70px;
-  min-width: 70px;
+  min-width: 0px;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: #99E2D0;
   border-radius: 0 15px 15px 0;
   transform: translateX(70px);
-  transition: transform 400ms;
+  transition: all 600ms ease;
 }
 .dish-type__dish-card--animation i {
   height: 25px;
@@ -382,7 +382,7 @@ button.btn:hover {
   background-color: white;
   border-radius: 50%;
   transform: rotate(0turn);
-  transition: transform 400ms;
+  transition: transform 600ms ease;
 }
 
 .footer {
@@ -435,7 +435,7 @@ button.btn:hover {
     transform: rotate(8deg);
   }
   80% {
-    transform: translateX(0px) scaleX(0.95) scaleY(1.1);
+    transform: translateX(0px);
   }
   85% {
     transform-origin: 0% 100%;

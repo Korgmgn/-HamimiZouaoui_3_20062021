@@ -119,11 +119,9 @@
         border-bottom: 3px solid lightgrey;
     }
     &__dish-card {
-        overflow: hidden;
-        white-space: nowrap;
-        text-overflow: ellipsis;
         @include dish-card;
         &:hover > .dish-type__dish-card--animation {
+            min-width: 70px;
             transform: translateX(0px);
             & i {
                 transform: rotate(1turn);
@@ -167,14 +165,14 @@
         }
         &--animation {
             height: 70px;
-            min-width: 70px;
+            min-width: 0px;
             display: flex;
             justify-content: center;
             align-items: center;
             background-color: $color-tertiary;
             border-radius: 0 15px 15px 0;
             transform: translateX(70px);
-            transition: transform 400ms;    
+            transition: all 600ms ease;    
             i {
                 height: 25px;
                 width: 25px;
@@ -185,7 +183,7 @@
                 background-color: white;
                 border-radius: 50%;
                 transform: rotate(0turn);
-                transition: transform 400ms;
+                transition: transform 600ms ease;
             }
         }       
     }
