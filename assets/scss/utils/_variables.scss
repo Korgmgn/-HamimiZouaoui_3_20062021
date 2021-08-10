@@ -8,6 +8,7 @@ $drkbg-color: #eaeaea;
 $btn-color: rgb(171,94,219);
 $btn-color-lighter: rgba(232,114,218,1);
 $btn-gradient: linear-gradient(350deg, rgba(171,94,219,1) 50%, rgba(232,114,218,1) 80%);
+$btn-brd-radius: 25px;
 
 $btn-gradient-lighten-a: lighten($btn-color, 3%);
 $btn-gradient-lighten-b: lighten($btn-color-lighter, 3%);

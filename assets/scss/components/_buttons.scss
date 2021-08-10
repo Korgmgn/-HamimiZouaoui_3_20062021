@@ -1,18 +1,29 @@
 @import "./../utils/variables";
 @import "./../utils/mixins";
 
-button.btn.btn--wide {
+.btn.btn--wide {
     @include btn(220px);
     &:hover {
-        @include btn-hover
+        &::after {
+            opacity: 1;
+        }
+    }
+    &::after {
+        @include btn-hover;
+        
     }
 }
 
-button.btn {
+.btn {
     @include btn;
     &:hover {
+        &::after {
+            opacity: 1;
+        }
+    }
+    &::after {
         @include btn-hover;
-    } 
+    }
 }
 
 .btn--position {

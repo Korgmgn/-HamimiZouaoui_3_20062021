@@ -63,7 +63,7 @@
   font-family: "Roboto";
   src: url(../fonts/Roboto-Medium.ttf);
 }
-.header__logo, .section__restaurant-name, .footer__logo, .footer-index__logo, .animation__logo {
+.header__logo, .restaurant-name__text, .footer__container--logo, .animation__logo {
   font-family: "Shrikhand";
 }
 
@@ -141,40 +141,64 @@ footer a {
     transform: rotate(6turn);
   }
 }
-button.btn.btn--wide {
+.btn.btn--wide {
   height: 50px;
   width: 220px;
+  position: relative;
   color: white;
-  background: #ab5edb;
   background: linear-gradient(350deg, #ab5edb 50%, #e872da 80%);
   border-radius: 25px;
-  border: none;
   box-shadow: 0px 3px 10px lightgrey;
+  border: none;
   cursor: pointer;
-  transition: all 300ms ease-in-out;
+  z-index: 1;
 }
-button.btn.btn--wide:hover {
-  box-shadow: 0px 10px 15px lightgrey;
-  background: #b26bde;
+.btn.btn--wide:hover::after {
+  opacity: 1;
+}
+.btn.btn--wide::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
   background: linear-gradient(350deg, #b26bde 50%, #ea7fdd 80%);
+  border-radius: 25px;
+  box-shadow: 0px 10px 15px lightgrey;
+  z-index: -1;
+  opacity: 0;
+  transition: all 400ms ease-in-out;
 }
 
-button.btn {
+.btn {
   height: 50px;
   width: 190px;
+  position: relative;
   color: white;
-  background: #ab5edb;
   background: linear-gradient(350deg, #ab5edb 50%, #e872da 80%);
   border-radius: 25px;
-  border: none;
   box-shadow: 0px 3px 10px lightgrey;
+  border: none;
   cursor: pointer;
-  transition: all 300ms ease-in-out;
+  z-index: 1;
 }
-button.btn:hover {
-  box-shadow: 0px 10px 15px lightgrey;
-  background: #b26bde;
+.btn:hover::after {
+  opacity: 1;
+}
+.btn::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
   background: linear-gradient(350deg, #b26bde 50%, #ea7fdd 80%);
+  border-radius: 25px;
+  box-shadow: 0px 10px 15px lightgrey;
+  z-index: -1;
+  opacity: 0;
+  transition: all 400ms ease-in-out;
 }
 
 .btn--position {
@@ -232,36 +256,12 @@ button.btn:hover {
   background-color: #f6f6f6;
   border-radius: 30px 30px 0 0;
 }
-.section__restaurant-name {
+.section__restaurant {
   position: relative;
   bottom: 40px;
-  display: flex;
-  font-size: 1.7em;
-  padding: 35px 25px 0 15px;
   background-color: #f6f6f6;
   border-radius: 35px 35px 0 0;
-}
-.section__restaurant-name h2 {
-  margin-right: auto;
-}
-.section__restaurant-name--heart-empty {
-  position: relative;
-  left: 27px;
-  z-index: 2;
-  color: grey;
-  opacity: 1;
-  transition: opacity 150ms;
-}
-.section__restaurant-name--heart-empty:hover {
-  opacity: 0;
-}
-.section__restaurant-name--heart-empty:hover + .section__restaurant-name--heart-filled {
-  transform: scale(1);
-}
-.section__restaurant-name--heart-filled {
-  color: #FF79DA;
-  transform: scale(0);
-  transition: transform 250ms;
+  padding: 35px 25px 0 15px;
 }
 .section__menu {
   display: flex;
@@ -282,6 +282,32 @@ button.btn:hover {
     flex-wrap: wrap;
     justify-content: space-around;
   }
+}
+
+.restaurant-name__text {
+  max-width: 1440px;
+  display: flex;
+  font-size: 1.7em;
+  margin: 0 auto 0 auto;
+}
+.restaurant-name__text--heart-empty {
+  position: relative;
+  left: 27px;
+  z-index: 2;
+  color: grey;
+  opacity: 1;
+  transition: opacity 150ms;
+}
+.restaurant-name__text--heart-empty:hover {
+  opacity: 0;
+}
+.restaurant-name__text--heart-empty:hover + .section__restaurant-name--heart-filled {
+  transform: scale(1);
+}
+.restaurant-name__text--heart-filled {
+  color: #FF79DA;
+  transform: scale(0);
+  transition: transform 250ms;
 }
 
 .dish-type {
@@ -363,6 +389,7 @@ button.btn:hover {
 }
 .dish-type__dish-card--animation {
   height: 70px;
+  width: 0px;
   min-width: 0px;
   display: flex;
   justify-content: center;
@@ -386,24 +413,34 @@ button.btn:hover {
 }
 
 .footer {
-  display: flex;
-  flex-direction: column;
   color: white;
   background-color: #353535;
   padding: 20px 0 25px 20px;
 }
-.footer__logo {
+.footer__container {
+  max-width: 1440px;
+  margin: 0 auto 0 auto;
+}
+.footer__container--logo {
+  font-size: 1.1em;
   margin-bottom: 15px;
 }
-.footer__list {
+.footer__container--list {
   font-size: 0.95em;
   line-height: 25px;
 }
-.footer__list--icon-a i {
+
+.footer-list__icon-a {
+  font-weight: bold;
+}
+.footer-list__icon-a i {
   font-size: 0.7em;
   margin-right: 11px;
 }
-.footer__list--icon-b i {
+.footer-list__icon-b {
+  font-weight: bold;
+}
+.footer-list__icon-b i {
   font-size: 0.6em;
   margin-right: 9px;
 }
@@ -574,6 +611,12 @@ button.btn:hover {
   }
 }
 
+@media all and (min-width: 1480px) {
+  .nav {
+    margin: auto;
+    max-width: 1440px;
+  }
+}
 .section-index {
   width: 100%;
   background-color: #f6f6f6;
@@ -584,11 +627,19 @@ button.btn:hover {
   font-weight: bold;
   margin: 50px auto 0 20px;
 }
+@media all and (min-width: 1480px) {
+  .section-index__title {
+    max-width: 1440px;
+    margin: 50px auto 0 auto;
+  }
+}
 .section-index__restaurants {
+  max-width: 1440px;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 10px 20px 60px 20px;
+  margin: auto;
 }
 .section-index__restaurants--card {
   height: 250px;
@@ -608,7 +659,7 @@ button.btn:hover {
 }
 @media all and (min-width: 1200px) {
   .section-index__restaurants--card {
-    height: 400px;
+    width: 24%;
   }
 }
 @media all and (min-width: 576px) {
@@ -627,11 +678,6 @@ button.btn:hover {
   height: 175px;
   object-fit: cover;
   border-radius: 15px 15px 0 0;
-}
-@media all and (min-width: 1200px) {
-  .card-content__img {
-    height: 325px;
-  }
 }
 .card-content__new {
   position: absolute;
@@ -682,29 +728,6 @@ button.btn:hover {
   font-size: 1.5em;
   transform: scale(0);
   transition: transform 250ms;
-}
-
-.footer-index {
-  display: flex;
-  flex-direction: column;
-  color: white;
-  background-color: #353535;
-  padding: 20px 0 25px 20px;
-}
-.footer-index__logo {
-  margin-bottom: 15px;
-}
-.footer-index__list {
-  font-size: 0.95em;
-  line-height: 25px;
-}
-.footer-index__list--icon-a i {
-  font-size: 0.7em;
-  margin-right: 11px;
-}
-.footer-index__list--icon-b i {
-  font-size: 0.6em;
-  margin-right: 9px;
 }
 
 .main-loader {

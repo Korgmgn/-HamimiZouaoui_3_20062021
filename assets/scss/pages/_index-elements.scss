@@ -93,6 +93,12 @@
         }
     }
 }
+@include monitor-large {
+    .nav {
+        margin: auto;
+        max-width: 1440px;
+    }
+}
 
 .section-index {
     width: 100%;
@@ -103,11 +109,19 @@
         font-weight: bold;
         margin: 50px auto 0 20px;
     }
+    @include monitor-large {
+        &__title {
+            max-width: 1440px;
+            margin: 50px auto 0 auto
+        }       
+    }
     &__restaurants {
+        max-width: 1440px;
         display: flex;
         flex-direction: column;
         align-items: center;
         padding: 10px 20px 60px 20px;
+        margin: auto;
         &--card {
             @include restaurant-card;
         }
@@ -118,7 +132,7 @@
         }
         @include monitor {
             &--card {
-                height: 400px;
+                width: 24%;
             }
         }
     }
@@ -138,11 +152,6 @@
         height: 175px;
         object-fit: cover;
         border-radius: 15px 15px 0 0;
-    }
-    @include monitor {
-        &__img {
-            height: 325px;
-        }
     }
     &__new {
         position: absolute;
@@ -192,29 +201,6 @@
             font-size: 1.5em;
             transform: scale(0);
             transition: transform 250ms;
-        }
-    }
-}
-
-.footer-index {
-    display: flex;
-    flex-direction: column;
-    color: white;
-    background-color: #353535;
-    padding: 20px 0 25px 20px;
-    &__logo {
-        margin-bottom: 15px;
-    }
-    &__list {
-        font-size: 0.95em;
-        line-height: 25px;
-        &--icon-a i {
-            font-size: 0.7em;
-            margin-right: 11px;
-        }
-        &--icon-b i{
-            font-size: 0.60em;
-            margin-right: 9px;
         }
     }
 }
