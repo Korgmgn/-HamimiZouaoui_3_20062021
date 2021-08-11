@@ -8,6 +8,10 @@
     src: url(../fonts/Roboto-Medium.ttf);
 }
 
+@font-face {
+    font-family: "Roboto-light";
+    src: url(../fonts/Roboto-Light.ttf);
+}
 .header__logo, .restaurant-name__text,  .footer__container--logo, .animation__logo
 {
     font-family: "Shrikhand";
@@ -16,6 +20,11 @@
 body
 {
     font-family: "Roboto";
+}
+
+p
+{
+    font-family: "Roboto-light";
 }
 
 ul

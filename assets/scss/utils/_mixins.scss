@@ -27,6 +27,9 @@
 @mixin btn($width: 190px){
     height: 50px;
     width: $width;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
     position: relative;
     color: white;
     background: $btn-gradient;
@@ -55,8 +58,8 @@
 @mixin nav-card($color: $bg-color){
     height: 75px;
     width: 100%;
+    position: relative;
     display: inline-flex;
-    justify-content: flex-start;
     align-items: center;
     font-weight: bold;
     background-color: $color;

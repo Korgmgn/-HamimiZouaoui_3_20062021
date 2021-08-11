@@ -63,12 +63,20 @@
   font-family: "Roboto";
   src: url(../fonts/Roboto-Medium.ttf);
 }
+@font-face {
+  font-family: "Roboto-light";
+  src: url(../fonts/Roboto-Light.ttf);
+}
 .header__logo, .restaurant-name__text, .footer__container--logo, .animation__logo {
   font-family: "Shrikhand";
 }
 
 body {
   font-family: "Roboto";
+}
+
+p {
+  font-family: "Roboto-light";
 }
 
 ul {
@@ -144,6 +152,9 @@ footer a {
 .btn.btn--wide {
   height: 50px;
   width: 220px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
   position: relative;
   color: white;
   background: linear-gradient(350deg, #ab5edb 50%, #e872da 80%);
@@ -174,6 +185,9 @@ footer a {
 .btn {
   height: 50px;
   width: 190px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
   position: relative;
   color: white;
   background: linear-gradient(350deg, #ab5edb 50%, #e872da 80%);
@@ -232,12 +246,13 @@ footer a {
 .header__logo {
   height: 60px;
   width: 100%;
-  display: flex;
-  flex-direction: row;
+  max-width: 1440px;
+  position: relative;
+  display: inline-flex;
   justify-content: center;
   align-items: center;
   font-size: 2em;
-  box-shadow: 0px 3px 10px lightgrey;
+  margin: auto;
 }
 .header__logo--arrow {
   position: absolute;
@@ -264,9 +279,11 @@ footer a {
   padding: 35px 25px 0 15px;
 }
 .section__menu {
+  max-width: 1440px;
   display: flex;
   flex-direction: column;
   padding: 0 15px 0 15px;
+  margin: 0 auto 0 auto;
 }
 .section__menu--category {
   margin-bottom: 30px;
@@ -285,10 +302,13 @@ footer a {
 }
 
 .restaurant-name__text {
-  max-width: 1440px;
+  max-width: 1420px;
   display: flex;
   font-size: 1.7em;
   margin: 0 auto 0 auto;
+}
+.restaurant-name__text h2 {
+  margin-right: auto;
 }
 .restaurant-name__text--heart-empty {
   position: relative;
@@ -301,7 +321,7 @@ footer a {
 .restaurant-name__text--heart-empty:hover {
   opacity: 0;
 }
-.restaurant-name__text--heart-empty:hover + .section__restaurant-name--heart-filled {
+.restaurant-name__text--heart-empty:hover + .restaurant-name__text--heart-filled {
   transform: scale(1);
 }
 .restaurant-name__text--heart-filled {
@@ -547,16 +567,28 @@ footer a {
   font-weight: bold;
   margin-bottom: 20px;
 }
-.nav__guide {
+
+@media all and (min-width: 870px) {
+  .nav {
+    width: 95%;
+  }
+}
+@media all and (min-width: 1480px) {
+  .nav {
+    margin: auto;
+    max-width: 1440px;
+  }
+}
+.guide {
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
-.nav__guide--step {
+.guide__step {
   height: 75px;
   width: 100%;
+  position: relative;
   display: inline-flex;
-  justify-content: flex-start;
   align-items: center;
   font-weight: bold;
   background-color: #f6f6f6;
@@ -564,29 +596,7 @@ footer a {
   box-shadow: 0px 3px 10px lightgrey;
   margin: 12px 0 12px 0;
 }
-.nav__guide--step i {
-  color: grey;
-  font-size: 1.25em;
-  margin: 0 25px 0 30px;
-}
-.nav__guide--steplightblue {
-  height: 75px;
-  width: 100%;
-  display: inline-flex;
-  justify-content: flex-start;
-  align-items: center;
-  font-weight: bold;
-  background-color: #f5edff;
-  border-radius: 15px;
-  box-shadow: 0px 3px 10px lightgrey;
-  margin: 12px 0 12px 0;
-}
-.nav__guide--steplightblue i {
-  color: #9356DC;
-  font-size: 1.25em;
-  margin: 0 25px 0 30px;
-}
-.nav__guide--number {
+.guide__step--number {
   min-height: 30px;
   min-width: 30px;
   display: inline-flex;
@@ -599,22 +609,63 @@ footer a {
   background-color: #9356DC;
   border-radius: 50%;
 }
+.guide__step i {
+  position: absolute;
+  left: 40px;
+  color: grey;
+  font-size: 1.25em;
+}
+.guide__step--text {
+  position: absolute;
+  left: 85px;
+  margin-right: 15px;
+}
+.guide__step-lightblue {
+  height: 75px;
+  width: 100%;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  font-weight: bold;
+  background-color: #f5edff;
+  border-radius: 15px;
+  box-shadow: 0px 3px 10px lightgrey;
+  margin: 12px 0 12px 0;
+}
+.guide__step-lightblue--number {
+  min-height: 30px;
+  min-width: 30px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  right: 15px;
+  z-index: 1;
+  color: white;
+  background-color: #9356DC;
+  border-radius: 50%;
+}
+.guide__step-lightblue i {
+  position: absolute;
+  left: 40px;
+  color: #9356DC;
+  font-size: 1.25em;
+}
+.guide__step-lightblue--text {
+  position: absolute;
+  left: 85px;
+  margin-right: 15px;
+}
 @media all and (min-width: 870px) {
-  .nav__guide--step, .nav__guide--steplightblue {
+  .guide__step, .guide__step-lightblue {
     width: 31%;
   }
 }
+
 @media all and (min-width: 870px) {
-  .nav__guide {
+  .guide {
     flex-direction: row;
     justify-content: space-between;
-  }
-}
-
-@media all and (min-width: 1480px) {
-  .nav {
-    margin: auto;
-    max-width: 1440px;
   }
 }
 .section-index {
