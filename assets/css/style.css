@@ -369,7 +369,7 @@ footer a {
   transform: translateX(0px);
 }
 .dish-type__dish-card:hover > .dish-type__dish-card--animation i {
-  transform: rotate(2turn);
+  transform: rotate(1turn);
 }
 .dish-type__dish-card--1 {
   animation-delay: 200ms;
@@ -386,7 +386,6 @@ footer a {
 .dish-type__dish-card--details {
   width: max-content;
   min-width: 0;
-  font-size: 1.15em;
   line-height: 25px;
   margin: auto 10px auto 10px;
 }
@@ -413,7 +412,7 @@ footer a {
 }
 .dish-type__dish-card--animation {
   height: 70px;
-  width: 10px;
+  width: 5px;
   min-width: 0px;
   display: flex;
   justify-content: center;
@@ -421,7 +420,7 @@ footer a {
   background-color: #99E2D0;
   border-radius: 0 15px 15px 0;
   transform: translateX(70px);
-  transition: all 550ms ease-out;
+  transition: all 450ms ease-out;
 }
 .dish-type__dish-card--animation i {
   height: 25px;
@@ -433,7 +432,7 @@ footer a {
   background-color: white;
   border-radius: 50%;
   transform: rotate(0turn);
-  transition: transform 550ms ease-in-out;
+  transition: transform 500ms ease-in-out;
 }
 
 .footer {
@@ -729,7 +728,7 @@ footer a {
   background: white;
   background: linear-gradient(180deg, white 0%, #99e2d0 100%);
   z-index: 3;
-  animation: spinner-bg 500ms 3400ms both;
+  animation: spinner-bg 500ms 2800ms both;
 }
 
 .animation {
@@ -738,7 +737,7 @@ footer a {
   justify-content: flex-start;
   align-items: center;
   position: relative;
-  animation: spinner-roll 1500ms 500ms ease both;
+  animation: spinner-roll 1500ms 300ms ease both;
 }
 .animation__bell {
   width: 200px;
@@ -751,7 +750,7 @@ footer a {
   border-radius: 90px 90px 5px 5px;
   box-shadow: 5px 0px 5px lightgrey;
   transform-origin: 0% 100%;
-  animation: bell-reveal 700ms 2200ms ease both;
+  animation: bell-reveal 700ms 1850ms ease both;
 }
 .animation__logo {
   font-size: 2em;
@@ -838,7 +837,7 @@ footer a {
   background-color: black;
   border-radius: 50%;
   box-shadow: 5px 0px 5px lightgrey;
-  animation: wheels 1900ms ease-out both;
+  animation: wheels 1700ms ease-out both;
 }
 .animation__chariot--wheel-1--inside {
   height: 24px;
@@ -879,7 +878,7 @@ footer a {
   background-color: black;
   border-radius: 50%;
   box-shadow: 5px 0px 5px lightgrey;
-  animation: wheels 1900ms ease-out both;
+  animation: wheels 1700ms ease-out both;
 }
 
 /*# sourceMappingURL=style.css.map */

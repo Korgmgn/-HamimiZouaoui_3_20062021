@@ -8,7 +8,7 @@
     background: rgb(255,255,255);
     background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(153,226,208,1) 100%);
     z-index: 3;
-    animation: spinner-bg 500ms 3400ms both
+    animation: spinner-bg 500ms 2800ms both
 }
   
 .animation {
@@ -18,7 +18,7 @@
     justify-content: flex-start;
     align-items: center;
     position: relative;
-    animation: spinner-roll 1500ms 500ms ease both;
+    animation: spinner-roll 1500ms 300ms ease both;
     &__bell {
         width: 200px;
         height: 100px;
@@ -30,7 +30,7 @@
         border-radius: 90px 90px 5px 5px;
         box-shadow: $spinner-shadow;
         transform-origin: 0% 100%;        
-        animation: bell-reveal 700ms 2200ms ease both;
+        animation: bell-reveal 700ms 1850ms ease both;
     }
     &__logo {
         font-size: 2em;
@@ -118,7 +118,7 @@
             background-color: black;
             border-radius: 50%;
             box-shadow: $spinner-shadow;
-            animation: wheels 1900ms ease-out both;
+            animation: wheels 1700ms ease-out both;
             &--inside {
                 height: 24px;
                 width: 24px;
@@ -159,7 +159,7 @@
             background-color: black;
             border-radius: 50%;
             box-shadow: $spinner-shadow;
-            animation: wheels 1900ms ease-out both;
+            animation: wheels 1700ms ease-out both;
         }
     }  
 }

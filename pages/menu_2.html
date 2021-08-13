@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -11,17 +11,19 @@
         <div class="main-container">
             <header class="header">
                 <div class="header__logo">
-                    <a href="../index.html"><i class="fas fa-arrow-left"></i></a>
-                    <h1>ohmyfood</h1>
+                    <a class="header__logo--arrow" href="../index.html"><i class="fas fa-arrow-left"></i></a>
+                    <h1 class="header__logo--title">ohmyfood</h1>
                 </div>
-                <img class="header__img" src="../assets/images/restaurants/note_enchantée.jpg">
+                <img class="header__img" src="../assets/images/restaurants/note_enchantée.jpg" alt="photo du restaurant">
             </header>
 
             <section class="section">
-                <div class="section__restaurant-name">
-                    <h2>La note enchantée</h2><span><i class="far fa-heart"></i><i class="fas fa-heart"></i></span>
+                <div class="section__restaurant">
+                    <div class="restaurant-name__text">
+                        <h2>La note enchantée</h2><div class="restaurant-name__text--heart-empty"><i class="far fa-heart"></i></div><div class="restaurant-name__text--heart-filled"><i class="fas fa-heart"></i></div>
+                    </div>
                 </div>
-                
+
                 <div class="section__menu">                   
 
                     <div class="section__menu--category">
@@ -29,44 +31,44 @@
 
                             <div class="dish-type__dish-card dish-type__dish-card--1">
                                 <div class="dish-type__dish-card--details">
-                                    <h3></h3>
-                                    <p></p>
+                                    <h3>Ravioles de foie gras</h3>
+                                    <p>Accompagnés de leur crème à la truffe</p>
                                 </div>
                                 <div class="dish-type__dish-card--price">
-                                    <p></p>  
+                                    <p>25€</p>  
                                 </div>
                                 <div class="dish-type__dish-card--animation"><i class="fas fa-check"></i></div>
                             </div>
 
                             <div class="dish-type__dish-card dish-type__dish-card--2">
                                 <div class="dish-type__dish-card--details">
-                                    <h3></h3>
-                                    <p></p>
+                                    <h3>Caviar osciètre</h3>
+                                    <p>Sur blini à la farine de blé noir</p>
                                 </div>
                                 <div class="dish-type__dish-card--price">
-                                    <p></p>  
+                                    <p>35€</p>  
                                 </div>
                                 <div class="dish-type__dish-card--animation"><i class="fas fa-check"></i></div>
                             </div>
 
                             <div class="dish-type__dish-card dish-type__dish-card--3">
                                 <div class="dish-type__dish-card--details">
-                                    <h3></h3>
-                                    <p></p>
+                                    <h3>Homard et espuma de potiron</h3>
+                                    <p>Mariné aux zestes d'orange</p>
                                 </div>
                                 <div class="dish-type__dish-card--price">
-                                    <p></p>  
+                                    <p>20€</p>  
                                 </div>
                                 <div class="dish-type__dish-card--animation"><i class="fas fa-check"></i></div>
                             </div>
 
                             <div class="dish-type__dish-card dish-type__dish-card--4">
                                 <div class="dish-type__dish-card--details">
-                                    <h3></h3>
-                                    <p></p>
+                                    <h3>Foie gras de canard cuit entier</h3>
+                                    <p>Confiture de figue et pain toasté</p>
                                 </div>
                                 <div class="dish-type__dish-card--price">
-                                    <p></p>  
+                                    <p>35€</p>  
                                 </div>
                                 <div class="dish-type__dish-card--animation"><i class="fas fa-check"></i></div>
                             </div>
@@ -77,33 +79,33 @@
                             
                             <div class="dish-type__dish-card dish-type__dish-card--1">
                                 <div class="dish-type__dish-card--details">
-                                    <h3></h3>
-                                    <p></p>
+                                    <h3>Noix de coquilles Saint-Jacques</h3>
+                                    <p>Sur lit de purée de céleri-rave</p>
                                 </div>
                                 <div class="dish-type__dish-card--price">
-                                    <p></p>  
+                                    <p>40€</p>  
                                 </div>
                                 <div class="dish-type__dish-card--animation"><i class="fas fa-check"></i></div>
                             </div>
 
                             <div class="dish-type__dish-card dish-type__dish-card--2">
                                 <div class="dish-type__dish-card--details">
-                                    <h3></h3>
-                                    <p></p>
+                                    <h3>Langoustine poêlée</h3>
+                                    <p>Purée de patate douce</p>
                                 </div>
                                 <div class="dish-type__dish-card--price">
-                                    <p></p>  
+                                    <p>35€</p>  
                                 </div>
                                 <div class="dish-type__dish-card--animation"><i class="fas fa-check"></i></div>
                             </div>
 
                             <div class="dish-type__dish-card dish-type__dish-card--3">
                                 <div class="dish-type__dish-card--details">
-                                    <h3></h3>
-                                    <p></p>
+                                    <h3>Mijoté de queue de boeuf</h3>
+                                    <p>Et riz sauvage aux zestes de citron</p>
                                 </div>
                                 <div class="dish-type__dish-card--price">
-                                    <p></p>  
+                                    <p>44€</p>  
                                 </div>
                                 <div class="dish-type__dish-card--animation"><i class="fas fa-check"></i></div>
                             </div>
@@ -114,53 +116,54 @@
                         
                             <div class="dish-type__dish-card dish-type__dish-card--1">
                                 <div class="dish-type__dish-card--details">
-                                    <h3></h3>
-                                    <p></p>
+                                    <h3>Macaron noisette et chocolat</h3>
+                                    <p>Glace au caramel brun et sel de Guérande</p>
                                 </div>
                                 <div class="dish-type__dish-card--price">
-                                    <p></p>  
+                                    <p>18€</p>  
                                 </div>
                                 <div class="dish-type__dish-card--animation"><i class="fas fa-check"></i></div>
                             </div>
 
                             <div class="dish-type__dish-card dish-type__dish-card--2">
                                 <div class="dish-type__dish-card--details">
-                                    <h3></h3>
-                                    <p></p>
+                                    <h3>Baba au rhum revisité</h3>
+                                    <p>Avec son coulis de citron</p>
                                 </div>
                                 <div class="dish-type__dish-card--price">
-                                    <p></p>  
+                                    <p>22€</p>  
                                 </div>
                                 <div class="dish-type__dish-card--animation"><i class="fas fa-check"></i></div>
                             </div>
 
                             <div class="dish-type__dish-card dish-type__dish-card--3">
                                 <div class="dish-type__dish-card--details">
-                                    <h3></h3>
-                                    <p></p>
+                                    <h3>Tarte au citron meringuée</h3>
+                                    <p>Déstructurée</p>
                                 </div>
                                 <div class="dish-type__dish-card--price">
-                                    <p></p>  
+                                    <p>23€</p>  
                                 </div>
                                 <div class="dish-type__dish-card--animation"><i class="fas fa-check"></i></div>
                             </div>
                     </div>
                 </div>
                 <div class="btn--position">
-                    <a href="#">
-                        <button type="submit" class="btn">Commander</button>
-                    </a>
+                    <a class="btn" href="#">Commander</a>
                 </div>
             </section>
         </div>
-            <footer class="footer">
-                <h2 class="footer__logo">ohmyfood</h2>
-                    <ul class="footer__list">
-                        <li class="footer__list--icon-a"><i class="fas fa-utensils"></i>Proposer un restaurant</li>
-                        <li class="footer__list--icon-b"><i class="fas fa-hands-helping"></i>Devenir partenaire</li>
-                        <li>Mentions légales</li>
-                        <li><a href="mailto:webmaster@example.com">Contact</a></li>
-                    </ul>
-            </footer>        
+
+        <footer class="footer">
+            <div class="footer__container">
+                <h2 class="footer__container--logo">ohmyfood</h2>
+                <ul class="footer__container--list">
+                    <li class="footer-list__icon-a"><i class="fas fa-utensils"></i>Proposer un restaurant</li>
+                    <li class="footer-list__icon-b"><i class="fas fa-hands-helping"></i>Devenir partenaire</li>
+                    <li class= "footer-list__light-font">Mentions légales</li>
+                    <li class= "footer-list__light-font"><a href="mailto:webmaster@example.com">Contact</a></li>
+                </ul>
+            </div>
+        </footer>      
     </body>
 </html>
