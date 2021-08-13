@@ -27,8 +27,7 @@
 }
 
 .btn--position {
-    display: flex;
-    flex-direction: row;
+    @extend %flex-row;
     justify-content: center;
     padding: 10px 0 55px 0;
 }

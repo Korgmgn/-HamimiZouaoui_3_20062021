@@ -14,8 +14,7 @@
 .animation {
     height: 400px;
     width: 310px;
-    display:flex;
-    flex-direction: column;
+    @extend %flex-column;
     justify-content: flex-start;
     align-items: center;
     position: relative;

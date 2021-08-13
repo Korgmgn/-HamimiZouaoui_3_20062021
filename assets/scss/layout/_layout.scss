@@ -1,38 +1,33 @@
-@import "./../utils/variables";
-
 * {
     font-size: 1em;
     font-weight: normal;
-    padding-inline-start: 0px;
     margin: 0px;
 }
 
 .main-container {
-    display: flex;
-    flex-direction: column;
+    @extend %flex-column;
     align-items: center;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto 0 auto;
 }
 
 .header {
     width: 100%;
-    display:flex;
-    flex-direction: column;
+    @extend %flex-column;
     text-align: center;
     &__logo {
-        height: 60px;
+        height: 55px;
         width: 100%;
-        max-width: 1440px;
+        max-width: $responsive-max-width;
         position: relative;
         display: inline-flex;
         justify-content: center;
         align-items: center;
         font-size: 2em;
         margin: auto;
+        padding-top: 5px;
         &--arrow {
             position: absolute;
-            left: 15px;
+            left: 20px;
             font-size: 0.6em;
         }        
     }
@@ -57,9 +52,8 @@
         padding: 25px 25px 0 15px;
     }
     &__menu {
-        max-width: 1440px;
-        display: flex;
-        flex-direction: column;
+        max-width: $responsive-max-width;
+        @extend %flex-column;
         padding: 0 15px 0 15px;
         margin: 0 auto 0 auto;
         &--category {
@@ -84,18 +78,13 @@
     &__text {
         max-width: 1420px;
         display: flex;
-        font-size: 1.7em;
+        font-size: 1.8em;
         margin: 0 auto 0 auto;
         h2 {
             margin-right: auto;
         }        
         &--heart-empty {
-            position: relative;
-            left: 27px;
-            z-index: 2;
-            color: grey;
-            opacity: 1;
-            transition: opacity 150ms;
+            @include heart-empty(27px, 0.95em);
             &:hover {
                 opacity: 0;
             }
@@ -104,9 +93,7 @@
             }           
         }        
         &--heart-filled {
-            color: $color-secondary;
-            transform: scale(0);
-            transition: transform 250ms;
+            @include heart-filled(0.95em)
         }
     }
 }
@@ -115,9 +102,9 @@
 .dish-type {
     display: inline-block;
     position: relative;
-    color: grey;
     text-transform: uppercase;
     font-size: 1.1em;
+    font-family: "Roboto-light";
     margin: 0px 0 20px 0;
     &::before {
         content:"";
@@ -133,47 +120,42 @@
             min-width: 70px;
             transform: translateX(0px);
             & i {
-                transform: rotate(1turn);
+                transform: rotate(2turn);
             }
         }
-        animation: menu-rollup 1000ms 500ms both;
+        animation: menu-rollup 1000ms both;
         @for $i from 1 through 4 {
             &--#{$i} {
-                animation-delay: 250ms * $i;
+                animation-delay: 200ms * $i;
             }
-        }
-        &:hover > .dish-type__dish-card--price {
-            transform: translateX(0);
         }
         &--details {
             width: max-content;
             min-width: 0;
             font-size: 1.15em;
-            font-weight: bold;
+            line-height: 25px;
             margin: auto 10px auto 10px;
             h3 {
-                white-space: nowrap;
-                overflow: hidden;
-                text-overflow: ellipsis;
+                font-size: 1.1em;
+                @include card-text-overflow;
             }
             p {
-                font-size: 0.95em;
-                color: grey;
-                font-weight: normal;
-                white-space: nowrap;
-                overflow: hidden;
-                text-overflow: ellipsis;
+                font-size: 0.85em;
+                @include card-text-overflow;
             }
         }
         &--price {
             width: max-content;
             margin: auto 15px 12px auto;            
             font-size: 0.95em;
-            font-weight: bold;         
+            p {
+                font-family: "Roboto";
+                font-weight: bold;
+            }       
         }
         &--animation {
             height: 70px;
-            width: 0px;
+            width: 10px;
             min-width: 0px;
             display: flex;
             justify-content: center;
@@ -181,7 +163,7 @@
             background-color: $color-tertiary;
             border-radius: 0 15px 15px 0;
             transform: translateX(70px);
-            transition: all 600ms ease;    
+            transition: all 550ms ease-out;    
             i {
                 height: 25px;
                 width: 25px;
@@ -192,7 +174,7 @@
                 background-color: white;
                 border-radius: 50%;
                 transform: rotate(0turn);
-                transition: transform 600ms ease;
+                transition: transform 550ms ease-in-out;
             }
         }       
     }
@@ -203,7 +185,7 @@
     background-color: #353535;
     padding: 20px 0 25px 20px;
     &__container {
-        max-width: 1440px;
+        max-width: $responsive-max-width;
         margin: 0 auto 0 auto;    
         &--logo {
             font-size: 1.1em;
@@ -218,17 +200,18 @@
 
 .footer-list {
     &__icon-a {
-        font-weight: bold;
         i {
         font-size: 0.7em;
         margin-right: 11px;
         }
     }
     &__icon-b {
-        font-weight: bold;
         i {
         font-size: 0.60em;
         margin-right: 9px;
         }
+    }
+    &__light-font {
+        font-family: "Roboto-light";
     }
 }

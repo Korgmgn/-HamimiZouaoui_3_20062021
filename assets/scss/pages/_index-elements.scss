@@ -1,5 +1,3 @@
-@import "./../utils/variables";
-@import "./../utils/mixins";
 .header {
     &__current-location {
         background-color: $drkbg-color;
@@ -20,8 +18,7 @@
         padding: 40px 0 50px 0;
         &--text {
             width: 90%;
-            display: flex;
-            flex-direction: column;
+            @extend %flex-column;
             margin: 0 auto 30px auto;
             h2 {
                 font-size: 1.65em;
@@ -40,7 +37,7 @@
 
 .nav {
     width: 88%;
-    padding: 50px 0 40px 10px;
+    padding: 50px 0 50px 10px;
     &__title {
         display: inline-flex;
         font-size: 1.5em;
@@ -56,13 +53,12 @@
 @include monitor-large {
     .nav {
         margin: auto;
-        max-width: 1440px;
+        max-width: $responsive-max-width;
     }
 }
 
 .guide {
-    display:flex;
-    flex-direction: column;
+    @extend %flex-column;
     justify-content: center;
     &__step {
         @include nav-card;
@@ -88,6 +84,7 @@
         &--text {
             position: absolute;
             left: 85px;
+            font-weight: bold;
             margin-right: 15px;
         }
     }   
@@ -115,6 +112,7 @@
         &--text {
             position: absolute;
             left: 85px;
+            font-weight: bold;
             margin-right: 15px;
         }
     }
@@ -142,14 +140,13 @@
     }
     @include monitor-large {
         &__title {
-            max-width: 1440px;
+            max-width: $responsive-max-width;
             margin: 50px auto 0 auto
         }       
     }
     &__restaurants {
-        max-width: 1440px;
-        display: flex;
-        flex-direction: column;
+        max-width: $responsive-max-width;
+        @extend %flex-column;
         align-items: center;
         padding: 10px 20px 60px 20px;
         margin: auto;
@@ -196,29 +193,23 @@
         border-radius: 3px;
     }
     &__bottom {
-        display: flex;
-        flex-direction: row;
+        @extend %flex-row;
         justify-content: space-between;
         padding: 8px 12px 5px 12px;
         &--text {
-            display: flex;
-            flex-direction: column;
+            @extend %flex-column;
             font-size: 1.15em;
             line-height: 25px;
             margin-right: auto;
             h3 {
                 font-weight: bold;
             }
+            p {
+                font-size: 0.95em;
+            }
         }
         &--heart-empty {
-            position: relative;
-            left: 24px;
-            z-index: 2;
-            color: grey;
-            align-self: center;
-            font-size: 1.5em;
-            opacity: 1;
-            transition: opacity 150ms;
+            @include heart-empty(24px, 1.5em);
             &:hover {
                 opacity: 0;
             }
@@ -227,11 +218,7 @@
             }           
         }        
         &--heart-filled {
-            color: $color-secondary;
-            align-self: center;
-            font-size: 1.5em;
-            transform: scale(0);
-            transition: transform 250ms;
+            @include heart-filled(1.5em)
         }
     }
 }
