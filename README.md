@@ -4,4 +4,4 @@ Intégration de la maquette responsive suivante, avec spinner, animations et dé
 
 <img src="assets/images/maquettes/accueil.png">
 
-<img src="assets/images/maquettes/exemple_menu.png>
+<img src="assets/images/maquettes/exemple_menu.png">
