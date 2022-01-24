@@ -55,7 +55,7 @@
     transform: rotate(6turn);
   }
 }
-.animation, .card-content__bottom--text, .section-index__restaurants--card, .section-index__restaurants, .guide, .header__intro--text, .section__menu, .header, .main-container {
+body, .animation, .card-content__bottom--text, .section-index__restaurants--card, .section-index__restaurants, .guide, .header__intro--text, .section__menu, .header, .main-container {
   display: flex;
   flex-direction: column;
 }
@@ -79,6 +79,10 @@
 }
 .header__logo, .restaurant-name__text, .footer__container--logo, .animation__logo {
   font-family: "Shrikhand";
+}
+
+html, body {
+    height: 100%;
 }
 
 body {
@@ -239,7 +243,6 @@ footer a {
 
 .main-container {
   align-items: center;
-  margin: 0 auto 0 auto;
 }
 
 .header {
@@ -439,6 +442,7 @@ footer a {
   color: white;
   background-color: #353535;
   padding: 20px 0 25px 20px;
+  margin-top: auto;
 }
 .footer__container {
   max-width: 1440px;
